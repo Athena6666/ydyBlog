@@ -30,7 +30,7 @@ jobs:
           endpoint: oss-cn-shanghai.aliyuncs.com
           access-key-id: ${{ secrets.ACCESS_KEY_ID }}
           access-key-secret: ${{ secrets.ACCESS_KEY_SECRET }}
-      - run: ossutil cp -rf ./.vitepress/dist/ oss://docs-laihaojie-top/
+      - run: ossutil cp -rf ./.vitepress/dist/ oss://ydyblog/
 
       - name: Github Pages
         uses: peaceiris/actions-gh-pages@v3
