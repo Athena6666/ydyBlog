@@ -1,0 +1,42 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 18.x
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 8.6.12
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build
+        run: pnpm build
+
+      - name: Upload to OSS
+        uses: manyuanrong/setup-ossutil@v2.0
+        with:
+          endpoint: oss-cn-shanghai.aliyuncs.com
+          access-key-id: ${{ secrets.ACCESS_KEY_ID }}
+          access-key-secret: ${{ secrets.ACCESS_KEY_SECRET }}
+      - run: ossutil cp -rf ./.vitepress/dist/ oss://docs-laihaojie-top/
+
+      - name: Github Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.PERSONAL_TOKEN }}
+          external_repository: laihaojie/laihaojie.github.io
+          publish_branch: docs
+          destination_dir: docs
+          publish_dir: ./.vitepress/dist

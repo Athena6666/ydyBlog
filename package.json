@@ -1,0 +1,43 @@
+{
+  "name": "ydyblog",
+  "packageManager": "pnpm@7.3.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev --port 9089",
+    "build": "vitepress build",
+    "serve": "vitepress serve",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@vueuse/core": "^10.7.2",
+    "cropperjs": "^1.6.1",
+    "driver.js": "^1.3.1",
+    "markdown-it-katex": "^2.0.3",
+    "vitepress": "1.0.0-rc.36",
+    "vue": "^3.4.15"
+  },
+  "devDependencies": {
+    "@djie/eslint-config": "^2.1.4",
+    "@djie/unocss": "^1.0.32",
+    "@types/node": "^20.11.7",
+    "eslint": "^8.56.0",
+    "esno": "^4.0.0",
+    "fs-extra": "^11.2.0",
+    "sass": "^1.70.0",
+    "unocss": "^0.58.4",
+    "vite-plugin-inspect": "^0.8.3"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search",
+        "@types/react",
+        "react",
+        "react-dom",
+        "esbuild",
+        "typescript"
+      ]
+    }
+  }
+}
