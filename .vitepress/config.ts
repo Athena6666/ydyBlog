@@ -5,7 +5,7 @@ import { customElements } from './shared/customeElements'
 import ItKatex from 'markdown-it-katex'
 
 export default defineConfig({
-  title: '网站title',
+  title: 'ydyblog',
   lang: 'zh-CN',
   lastUpdated: true,
   appearance: 'dark',
