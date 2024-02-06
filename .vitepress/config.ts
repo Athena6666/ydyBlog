@@ -24,6 +24,10 @@ export default defineConfig({
       // debug: false,
     },
     lastUpdatedText: '上次更新于',
+    footer: {
+      message: '<a style="text-decoration:none" href="http://www.beian.miit.gov.cn">苏ICP备2024068067号</a>.',
+      copyright: 'Copyright © 2024 athena-ydy'
+    }
   },
   vue: {
     template: {
