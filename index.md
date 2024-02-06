@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: 网站名字
+  name: ydy的博客
   text: Vite & Vue powered static site generator.
   tagline: Lorem ipsum...
   image:
