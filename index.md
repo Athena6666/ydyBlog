@@ -6,7 +6,7 @@ hero:
   text: Vite & Vue powered static site generator.
   tagline: Lorem ipsum...
   image:
-    src: /mao.png
+    src: /e.png
     # src: /an.webp
     alt: VitePress
   actions:
@@ -15,7 +15,7 @@ hero:
     #   link: /guide/what-is-vitepress
     - theme: alt
       text: View on GitHub
-      link: https://github.com/laihaojie/jie-docs
+      link: https://github.com/Athena6666/ydyBlog
 
 features:
   # - icon: ⚡️
