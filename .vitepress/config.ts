@@ -19,12 +19,15 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/Athena6666' },
     ],
-    algolia: {
-      appId: 'SQQX8T24C2',
-      apiKey: '5ead0f097971bf2b9263a5e0f50dece8',
-      indexName: 'liujiayu',
-      // debug: false,
+    search: {
+      provider: 'local'
     },
+    // algolia: {
+    //   appId: 'SQQX8T24C2',
+    //   apiKey: '5ead0f097971bf2b9263a5e0f50dece8',
+    //   indexName: 'liujiayu',
+    //   // debug: false,
+    // },
     lastUpdated: {
       text: '上次更新于',
       formatOptions: {
