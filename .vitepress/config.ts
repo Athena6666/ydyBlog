@@ -12,7 +12,7 @@ export default defineConfig({
   head: [['link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css', crossorigin: '' }]],
   themeConfig: {
     logo: '/e.png',
-    siteTitle: false,
+    siteTitle: 'ydyblog',
     aside: true,
     nav: nav(),
     sidebar: sidebar(),
