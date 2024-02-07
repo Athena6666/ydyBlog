@@ -10,9 +10,9 @@ hero:
     # src: /an.webp
     alt: VitePress
   actions:
-    # - theme: brand
-    #   text: Get Started
-    #   link: /guide/what-is-vitepress
+    - theme: brand
+      text: Get Started
+      link: /src/notes/
     - theme: alt
       text: View on GitHub
       link: https://github.com/Athena6666/ydyBlog

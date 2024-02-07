@@ -11,19 +11,28 @@ export default defineConfig({
   appearance: 'dark',
   head: [['link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css', crossorigin: '' }]],
   themeConfig: {
+    logo: '/public/e.png',
+    siteTitle: false,
+    aside: true,
     nav: nav(),
     sidebar: sidebar(),
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/chauncylee' },
+      { icon: 'github', link: 'https://github.com/Athena6666' },
     ],
-
     algolia: {
       appId: 'SQQX8T24C2',
       apiKey: '5ead0f097971bf2b9263a5e0f50dece8',
       indexName: 'liujiayu',
       // debug: false,
     },
-    lastUpdatedText: '上次更新于',
+    lastUpdated: {
+      text: '上次更新于',
+      formatOptions: {
+        dateStyle: 'full',
+        timeStyle: 'medium'
+      }
+    },
+    // lastUpdatedText: '上次更新于',
     footer: {
       message: '<a style="text-decoration:none" href="http://www.beian.miit.gov.cn">苏ICP备2024068067号</a>.',
       copyright: 'Copyright © 2024 athena-ydy'
