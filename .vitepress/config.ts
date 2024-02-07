@@ -11,7 +11,7 @@ export default defineConfig({
   appearance: 'dark',
   head: [['link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css', crossorigin: '' }]],
   themeConfig: {
-    logo: '/public/e.png',
+    logo: '/e.png',
     siteTitle: false,
     aside: true,
     nav: nav(),
