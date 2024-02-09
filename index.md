@@ -2,9 +2,9 @@
 layout: home
 
 hero:
-  name: ydy的博客
-  text: Vite & Vue powered static site generator.
-  tagline: Lorem ipsum...
+  name: ydy's Blog
+  # text: 
+  tagline: 要么出众，要么出局。
   image:
     src: /e.png
     # src: /an.webp
@@ -13,18 +13,18 @@ hero:
     - theme: brand
       text: Get Started
       link: /src/notes/
-    # - theme: alt
-    #   text: View on GitHub
-    #   link: https://github.com/Athena6666/ydyBlog
+    - theme: alt
+      text: View on GitHub
+      link: https://github.com/Athena6666/ydyBlog
 
 features:
-  - icon: ⚡️
-    title: Vite, The DX that can't be beat
-    details: Lorem ipsum...
-  - icon: 🖖
-    title: Power of Vue meets Markdown
-    details: Lorem ipsum...
-  - icon: 🛠️
-    title: Simple and minimal, always
-    details: Lorem ipsum...
+  # - icon: ⚡️
+  #   title: Vite, The DX that can't be beat
+  #   details: Lorem ipsum...
+  # - icon: 🖖
+  #   title: Power of Vue meets Markdown
+  #   details: Lorem ipsum...
+  # - icon: 🛠️
+  #   title: Simple and minimal, always
+  #   details: Lorem ipsum...
 ---
