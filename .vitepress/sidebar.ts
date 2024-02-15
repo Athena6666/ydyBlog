@@ -13,6 +13,9 @@ export function sidebar() {
     ],
     '/src/notes/': [
       { text: '随手记', collapsed: false, items: getMds('/notes/') }
+    ],
+    '/src/qd/': [
+      { text: '前端学习', collapsed: false, items: getMds('/qd/') }
     ]
   }
 }

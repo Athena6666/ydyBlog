@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: ydy's Blog
-  # text: 
+  # text: Vite & Vue powered static site generator.
   tagline: 要么出众，要么出局。
   image:
     src: /e.png
