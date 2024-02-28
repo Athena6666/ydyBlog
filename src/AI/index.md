@@ -1,4 +1,8 @@
-# AI 与 AI 安全的一些基本概念
+# 毕设 第一周汇报
+
+## 一、论文研读
+
+![avatar](../../public/AI/论文1.png)
 
 ## 1. 机器学习/深度学习/强化学习的基本概念及关系：
 
@@ -70,3 +74,53 @@
 - 差分隐私技术：通过引入噪声使至多相差 1 个数据的 2 个数据集查询结果概率不可分
 
 - 安全多方计算(MPC)
+
+## 二、代码部分
+下载了CIFAR-10 数据集，并对数据集进行预处理，进行模型训练，成功跑通，并生成了训练和数据时每个图像类型的准确度和损失函数，用plot绘制出图像，结果如下图所示：
+
+![avatar](../../public/AI/代码.png)
+
+但是还有两部分没跑通
+
+## 三、代码研读
+对部分代码进行了研读，发现该项目一共由三部分组成，三种数据集分别是交通工具类，服装类，手写数字图片，然后分别对每个数据集进行训练和测试，对一些函数和专业术语的整理如下：
+
+![avatar](../../public/AI/代码研读.png)
+
+**(1) learning rate 学习率：学习率决定了每次更新参数时的步长大小。它控制着参数的更新速度。较大的学习率可能导致参数在更新过程中跳过最优解，而较小的学习率可能导致收敛速度过慢。**
+
+**(2) torchvision.transforms.ToTensor()：将PIL图像或NumPy数组转换为PyTorch Tensor格式。**
+
+**(3) torchvision.transforms.Normalize((0.1307,), (0.3081,))：对输入的张量进行归一化操作。这里的参数表示数据集的均值和标准差，用于将输入数据的每个通道进行归一化，使其均值为 0、标准差为 1。这种归一化通常有助于提高模型的鲁棒性和收敛速度。**
+
+**(4) trainset=torchvision.datasets.FashionMNIST('../../Datasets/',train=True,transform=train_transform, download=True)：**
+**通过 torchvision.datasets.FashionMNIST 创建了一个 FashionMNIST 数据集的实例FashionMNIST 是一个包含服装类别的图像数据集，用于图像分类任务。其中参数如下：**
+* train=True：表示创建的是训练集。如果设置为 False，则创建测试集。
+* transform=train_transform：指定了之前定义的数据预处理转换操作集合 train_transform，用于对图像进行预处理。
+* download=True：如果数据集尚未下载到指定路径（'../../Datasets/'），则自动下载。
+
+**(5) trainloader=torch.utils.data.DataLoader(trainset,batch_size=batch_size,shuffle=True,num_workers=2)：**
+**通过 torch.utils.data.DataLoader 创建了一个训练数据加载器 trainloader。数据加载器可以将数据集分批次地提供给模型进行训练，以利用批处理的并行计算能力。其中参数如下：**
+* trainset：指定要加载的数据集对象
+* batch_size：指定每个批次的样本数量
+* shuffle=True：表示在每个epoch（训练循环）开始时打乱数据集的顺序，以增加样本间的随机性
+* num_workers=2：指定用于数据加载的工作线程数
+但是trainloader好像没用到，还有待研究
+
+**(6) shadow_train_sampler = SubsetRandomSampler(shadow_train_idx)：创建一个能够从给定索引列表中随机选择样本的采样器**
+
+**(7)![avatar](../../public/AI/代码研读1.png)**
+* 首先，代码通过target_net_type()创建了一个目标模型target_net，并将其移到到指定设备上
+* 然后，通过target_net.apply(models.weights_init)应用了一个初始化函数models.weights_init，用于初始化目标模型的权重
+* 接着，用nn.CrossEntropyLoss()定义了目标模型的损失函数target_loss，用于计算模型在训练中的损失
+* 最后，使用optim.Adam(target_net.parameters(), lr=lr) 创建了一个Adam优化器 target_optim，用于更新目标模型的参数。
+
+**(8) def train(net, data_loader, test_loader, optimizer, criterion, n_epochs, classes=None, verbose=False)，训练函数中的各参数解释如下：**
+* optimizer：优化器
+* criterion：常用的损失函数
+* n_epochs：整数类型的可选项，默认为4。表示训练模型的周期数，一个周期是指对训练数据集进行完整的一次循环
+* verbose：日志显示
+
+## 四、论文翻译
+将之前选的英文文献翻译了一下
+![avatar](../../public/AI/文献翻译.png)
