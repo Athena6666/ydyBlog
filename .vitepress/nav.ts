@@ -6,13 +6,10 @@ export function nav(): DefaultTheme.NavItem[] {
       text: '随手记', link: '/src/notes/'
     },
     {
-      text: '毕设', link: '/src/AI/'
+      text: 'AI', link: '/src/AI/'
     },
     {
       text: '网安', link: '/src/networkSecurity/'
-    },
-    {
-      text: '前端', link: '/src/qd/'
     },
     {
       text: 'Bug笔记',
